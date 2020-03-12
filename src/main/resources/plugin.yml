@@ -1,0 +1,8 @@
+main: me.epicgodmc.epicvalues.EpicValues
+name: EpicValues
+version: 1.0.0
+author: EpicGodMC
+commands:
+  EpicValues:
+    usage: /<command>
+    aliases: [ev, value, epicvalue]

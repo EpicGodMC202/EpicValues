@@ -1,0 +1,73 @@
+pluginPrefix: "&c&lEpicValues &7// &c"
+messages:
+  provideIdentifier: "Please provide your value name"
+  valueNotFound: "That value could not be found!."
+  pageNotFound: "That page could not be found!"
+  invalidArgLength: "Invalid argument length"
+  noPermissions: "You don't have permission to run this command!."
+  playerNotFound: "The specified player could not be found!."
+  notANumber: "The Value %value% you specified is invalid!"
+  valueReset: "The value %identifier% has been reset to %value% for %player%"
+  valueDecrement: "The value %identifier% has been Decremented to %value% for %player%"
+  valueIncrement: "The value %identifier% has been Incremented to %value% for %player%"
+  valueSet: "The Value %identifier% has been set to %value% for %player%"
+  cmdNotRecognized: "SubCommand not recognized!."
+  error: "Un unexpected error has occurred!."
+  usage:
+    - '&c&n-----------------------------------'
+    - ''
+    - '&6&l/EpicValues &c<&6[username], [GLOBAL]&c> &c<&6[set], [add], [sub], [reset], [info]&c> &c<&6[ValueIdentifier]&c> &c<&6Value&c>'
+    - ''
+    - '&c&n-----------------------------------'
+
+################################## +++++ TRIGGERS +++++ ##################################
+
+#Types you can use are:
+# "=" : Whether the value specified here is equal to the value found
+# ">" : Whether the value specified here is bigger than the value found
+# "<": Whether the value specified here is smaller than the value found
+# ">=" : Whether the value specified here is bigger OR equal to the value found
+# "<=" : Whether the value specified here is smaller OR equal to the value found
+#
+# If no type is found it will default to "="
+#
+# In the player section these variables may be used:
+# "%player%" : the player's name
+# "%value%" : the value amount that the player currently has
+# "%valuechecked%" : the value that was specified here
+# "%identifier%" : the name of the value
+
+# In the global section these variables may be used:
+# "%value%" : the value
+# "%valuechecked%" : the value that was specified here
+# "%identifier%" : the name of the value
+
+
+valueTriggers:
+  #The time in seconds between each time the check whether any values are met will occur
+  checkInterval: 10
+  player:
+    testIdentifier:
+      value: 100
+      type: "="
+      commands:
+        - 'say dis is working'
+  global:
+    testIdentifier:
+      value: 100
+      type: "="
+      commands:
+        - 'say dis is working'
+######################################################################################################
+
+#Basevalues only work player specific
+#Speaks for itself, the values MUST be numeric
+baseValues:
+  identifier: 500
+  iWillStartAt5: 5
+
+#Configuration of how the info command will display the information
+valueInfo:
+  header: "&6&lValue Info of %player% &7- &6&lPage %pageNumber%"
+  format: "&c%identifier%: %value%"
+  footer: "&7To view next page, do &c/ev %player% info %nextPageNumber%"
